@@ -1,0 +1,34 @@
+<div class='row'>
+    <div class='col-md-3'>
+      <%= render 'books/list', user: @user, book: @book %>
+      <!--%= render 'books/list', book: @book %>-->
+    </div>
+     <div class='col-md-9'>
+      <main>
+         <h2>Books</h2>
+            <!--%= form_with model:@user, local:true do |f| %>-->
+            <% @books.each do |f| %>
+          <table class='table table-hover table-inverse'>
+            <thead>
+                <tr>
+                  <th></th>
+                  <th>Title</th>
+                  <th>Opinion</th>
+                  <th colspan="3"></th>
+                </tr>
+            </thead>
+              
+            <tbody>
+              <tr>
+                <td><%= attachment_image_tag f.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
+                <!--f.userの記述でf値の中のユーザーの情報を引き出す-->
+                <td><%= link_to f.title, book_path(f.id) %></td>
+                <td><%= f.body %></td>
+              </tr>
+           </tbody>
+          </table>
+       
+      </main>
+      </div>
+</div>
+<% end %>

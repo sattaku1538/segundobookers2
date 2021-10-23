@@ -1,0 +1,27 @@
+<%= flash[:alert] %>
+
+<%= render 'books/list', user: @users, book: @books %>
+
+<div class='col-md-8 offset-md-1'>
+      <h2>Books</h2>
+      <%= form_with model:@users, local:true do |f| %>
+      <table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th colspan="3"></th>
+    </tr>
+  </thead>
+     <tbody>
+    <tr>
+        <td><%= attachment_image_tag users, :profile_image, size: "10x10", fallback: "no_image.jpg" %></td>
+        <td><%= f.text_field :title %></td>
+        <td><%= f.text_area :body %></td>
+    </tr>
+     </tbody>
+    </table>
+</div>
+
+<% end %>
