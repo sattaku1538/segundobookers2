@@ -1,3 +1,8 @@
+<% flash.each do |key, value| %>
+<p id="<%= key %>"><%= value %></p>
+<% end %>
+
+
 <div class='row'>
     <div class='col-md-3'>
       <%= render 'books/list', user: @user, book: @book %>
