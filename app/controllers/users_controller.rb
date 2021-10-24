@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   
   def edit
    @user = User.find(params[:id])
+    # 他ユーザーが使えないようにするコマンド
+    unless @user = current_user
+    render :edit
+    end
   end
   
   def update

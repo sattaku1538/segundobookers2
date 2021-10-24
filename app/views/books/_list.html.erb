@@ -15,7 +15,10 @@
                </tr>
                <tr>
         	     <th>introduction</th>
+        	     　<!--他のユーザーが変更できないようにする。-->
+        	      <!--% if @user.id == current_user.id %>-->
         	     <th><%= user.introduction %></th>
+        	      <!--% end %>-->
                </tr>
       </table>
              <%= link_to edit_user_path(user), class:"btn btn-success btn-sm btn-block sign_up" do %> <i class="fas fa-user-tag"></i> <% end %>

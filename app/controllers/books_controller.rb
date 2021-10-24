@@ -29,6 +29,10 @@ class BooksController < ApplicationController
   
   def edit
     @book = Book.find(params[:id])
+    # 他の人が使えないようにするコマンド
+    unless @book = current_user
+    render :edit
+    end
   end
   
   def update
