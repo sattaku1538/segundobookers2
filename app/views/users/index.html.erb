@@ -23,7 +23,6 @@
               <tr>
                <!--%= form_with model:@user, local:true do |f| %>-->
                 <td><%= attachment_image_tag f, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-                <!--f.userの記述でf値の中のユーザーの情報を引き出す-->
                 <td><%= f.name %></td>
                 <td><%= link_to "Show", user_path(f.id) %></td>
               </tr>

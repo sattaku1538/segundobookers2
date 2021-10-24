@@ -30,10 +30,15 @@ class BooksController < ApplicationController
   
   def edit
     @book = Book.find(params[:id])
+    if @book.user == current_user
+      render :edit
+    else
+      redirect_to books_path
     # 他の人が使えないようにするコマンド
     # unless @user = current_user
     # render :edit
     # end
+    end
   end
   
   def update
@@ -61,7 +66,6 @@ class BooksController < ApplicationController
   # def correct_user
   #   @book = Book.find(params[:id])
   #   unless @book == current_user
-  #     redirect_to book_path(current_user)
   #   end
   # end
   
