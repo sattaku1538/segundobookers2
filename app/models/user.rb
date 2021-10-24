@@ -8,7 +8,7 @@ class User < ApplicationRecord
   attachment :profile_image
   
   #   修正中
-  validates :name, presence: true
-  validates :introduction, presence: true
+  validates :name, uniqueness: true, length: { maximum: 20, minimum: 2 } 
+  validates :introduction, length: { maximum: 50 } 
   
 end
