@@ -28,8 +28,11 @@
             <tbody>
             <% @books.each do |f| %>
               <tr>
-                <td><%= attachment_image_tag f.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-                <!--f.userの記述でf値の中のユーザーの情報を引き出す-->
+                <td>
+                <%= link_to user_path(f.id) do %>
+                <%= attachment_image_tag f.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+  　　　　　    　　　<% end %>
+  　　　　　         <!--f.userの記述でf値の中のユーザーの情報を引き出す-->
                 <td><%= link_to f.title, book_path(f.id) %></td>
                 <td><%= f.body %></td>
               </tr>

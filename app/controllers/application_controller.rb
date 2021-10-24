@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     # before_action :authenticate_user!, only: [:homes]
-    before_action :authenticate_user!,except: [:top]
+    before_action :authenticate_user!,except: [:top, :about]
     # アクセス権限の実装のために追加Homesには追加。
     
     before_action :configure_permitted_parameters, if: :devise_controller?

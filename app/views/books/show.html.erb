@@ -11,12 +11,12 @@
 
      <div class='col-md-8 offset-md-1'>
       <main>
-        <h2>Book Detail</h2>
+        <h2>Book detail</h2>
         <table class='table table-hover table-inverse'>
             <tbody>
              <tr>
                 <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%><br>
-                    <%= link_to @user.name %></td>    
+                    <%= link_to @user.name, user_path(@user) %></td>    
                 <td><%= @books.title %></td>
                 <td><%= @books.body %></td>
                 <% if @user.id == current_user.id %>

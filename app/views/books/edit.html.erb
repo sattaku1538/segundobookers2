@@ -3,7 +3,7 @@
 <% end %>
 
 <% if @book.errors.any? %>
-<%= @book.errors.count %>Error
+<%= @book.errors.count %> error
 <% @book.errors.full_messages.each do |message| %>
 <%= message %>
 <% end %>
@@ -15,14 +15,14 @@
         <h1>Editing Book</h1>
   		  <%= form_with model:@book, local:true do |f| %>
   		    <div class="form-group">
-          <h4>Title</h4><br>
-          <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"title"%><br>
+          <h4>title</h4><br>
+          <%= f.text_field :title, autofocus: true, id:"inputTitle" %><br>
           <!--Placeholderは文体を強調するやつ-->
           </div>
           
           <div class="form-group">
-          <h4>Opnion</h4><br>
-          <%= f.text_field :body, autofocus: true, id:"inputBody", placeholder:"ボディ"%><br>
+          <h4>opnion</h4><br>
+          <%= f.text_field :body, autofocus: true, id:"inputBody" %><br>
           </div>
           <%= f.submit "Update Book" %><br>
           
