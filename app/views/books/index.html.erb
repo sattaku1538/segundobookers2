@@ -1,3 +1,11 @@
+    <% if @book.errors.any? %>
+    <%= @book.errors.count %>Error
+    <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>
+    <% end %>
+
+
 <div class='row'>
     <div class='col-md-3'>
       <%= render 'books/list', user: @user, book: @book %>

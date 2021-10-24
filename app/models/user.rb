@@ -6,4 +6,9 @@ class User < ApplicationRecord
          
   has_many :books, dependent: :destroy
   attachment :profile_image
+  
+  #   修正中
+  validates :name, presence: true
+  validates :introduction, presence: true
+  
 end
