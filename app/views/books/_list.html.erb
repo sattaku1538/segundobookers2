@@ -8,31 +8,32 @@
       <!--%= form_with model:user, local:true do |f| %>-->
       　　　<table class='table'>
                <!--<tr>%= attachment_image_tag user, :profile_image, size: "10x10", fallback: "no_image.jpg" %></tr>-->
-               <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></tr>
-               <tr>
-        	     <th>name</th>
-        	     <th><%= user.name %></th>
+              <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></tr>
+              <tr>
+            	     <th>name</th>
+            	     <th><%= user.name %></th>
                </tr>
+               
                <tr>
-        	     <th>introduction</th>
-        	     　<!--他のユーザーが変更できないようにする。-->
-        	      <!--% if @user.id == current_user.id %>-->
-        	     <th><%= user.introduction %></th>
-        	      <!--% end %>-->
+          	     <th>introduction</th>
+          	     　<!--他のユーザーが変更できないようにする。-->
+          	      <!--% if @user.id == current_user.id %>-->
+          	     <th><%= user.introduction %></th>
+          	      <!--% end %>-->
                </tr>
       　　　</table>
       　　　
              <%= link_to edit_user_path(user), class:"btn btn-success btn-sm btn-block sign_up" do %> <i class="fas fa-user-cog"></i> <% end %>
              <h1>New book</h1>
               <!-- form_with部分 -->
-              <%= form_with model:@book, local:true do |f| %>
-               <h4>title</h4>
-               <%= f.text_field :title %>
-               <h4>opnion</h4>
-                <%= f.text_area :body %>
-                <%= f.submit 'Create Book' %>
-                <% end %>
-          
+                 <%= form_with model:@book, local:true do |f| %>
+              <h4>title</h4>
+                 <%= f.text_field :title %>
+              <h4>opnion</h4>
+                 <%= f.text_area :body %>
+                 <%= f.submit 'Create Book' %>
+                 <% end %>
+           
               <!--</div>-->
              <!--</div>-->
  </div>
